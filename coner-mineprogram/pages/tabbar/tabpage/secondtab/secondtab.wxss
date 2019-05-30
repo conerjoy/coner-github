@@ -1,0 +1,2 @@
+@import '../../teacher/lesson-preparation/lesson-preparation.wxss';
+@import '../../student/test/test.wxss';

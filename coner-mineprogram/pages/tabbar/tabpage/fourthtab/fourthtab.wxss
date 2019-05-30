@@ -1,0 +1,2 @@
+@import '../../teacher/mine/mine.wxss';
+@import '../../student/mine/mine.wxss';

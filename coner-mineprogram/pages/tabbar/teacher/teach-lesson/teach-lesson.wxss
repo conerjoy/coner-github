@@ -1,0 +1,10 @@
+.teach-teachlesson-page {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+}
+.teach-teachlesson-page .content-view {
+  display: flex;
+  justify-content: center;
+  line-height: 300px;
+}

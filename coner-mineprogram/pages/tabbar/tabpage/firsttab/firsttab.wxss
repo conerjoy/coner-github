@@ -1,0 +1,2 @@
+@import '../../teacher/teach-lesson/teach-lesson.wxss';
+@import '../../student/go-class/go-class.wxss';

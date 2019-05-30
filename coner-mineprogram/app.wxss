@@ -1,0 +1,5 @@
+@import 'styles/iconfont.wxss';
+
+page {
+  height: 100%;
+}

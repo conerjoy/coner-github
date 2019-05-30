@@ -1,0 +1,64 @@
+{
+  "tabBar": {
+    "custom": true,
+    "backgroundColor": "#fff",
+    "selectedColor": "#d4237a",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/tabpage/firsttab/firsttab",
+        "text": "教课",
+        "iconPath": "images/icon_teachclass_normal.png",
+        "selectedIconPath": "images/icon_teachclass_select.png"
+      },
+      {
+        "pagePath": "pages/tabbar/tabpage/secondtab/secondtab",
+        "text": "备课",
+        "iconPath": "images/icon_lessonpreparation_normal.png",
+        "selectedIconPath": "images/icon_lessonpreparation_select.png"
+      },
+      {
+        "pagePath": "pages/tabbar/tabpage/thirdtab/thirdtab",
+        "text": "教师职称",
+        "iconPath": "images/icon_level_normal.png",
+        "selectedIconPath": "images/icon_level_select.png"
+      },
+      {
+        "pagePath": "pages/tabbar/tabpage/fourthtab/fourthtab",
+        "text": "我的",
+        "iconPath": "images/icon_mine_normal.png",
+        "selectedIconPath": "images/icon_mine_select.png"
+      }
+    ]
+  },
+  "pages": [
+    "pages/project/choose-status/choose-status",
+    "pages/tabbar/tabpage/firsttab/firsttab",
+    "pages/tabbar/tabpage/secondtab/secondtab",
+    "pages/tabbar/tabpage/thirdtab/thirdtab",
+    "pages/tabbar/tabpage/fourthtab/fourthtab",
+    "pages/common/pages/webview/webview"
+  ],
+  "puppet": [
+    "pages/tabbar/teacher/teach-lesson/teach-lesson",
+    "pages/tabbar/teacher/lesson-preparation/lesson-preparation",
+    "pages/tabbar/teacher/level/level",
+    "pages/tabbar/teacher/mine/mine",
+    "pages/tabbar/student/go-class/go-class",
+    "pages/tabbar/student/test/test",
+    "pages/tabbar/student/homework/homework",
+    "pages/tabbar/student/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#d4237a",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于“coner-miniprogram”为您提供服务"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

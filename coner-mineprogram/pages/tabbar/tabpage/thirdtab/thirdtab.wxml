@@ -1,0 +1,2 @@
+<include wx:if='{{tabbarData.target == "teacher"}}' src='../../teacher/level/level.wxml' />
+<include wx:if='{{tabbarData.target == "student"}}' src='../../student/homework/homework.wxml' />

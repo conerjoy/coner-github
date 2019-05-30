@@ -1,0 +1,104 @@
+module.exports = {
+  formatTime: formatTime,
+  switchTimeStamp: switchTimeStamp,
+  switchDateStamp: switchDateStamp,
+  getDateString: getDateString,
+  getTimeString: getTimeString,
+  ObjectToJSONString: ObjectToJSONString,
+  getYearString: getYearString,
+  getMonthAndDayString: getMonthAndDayString
+}
+
+function formatNumber (n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+function formatTime(number, format) {
+  if (number == undefined || number == '') {
+    return '';
+  }
+  if (format == undefined) {
+    format = 'Y-M-D h:m:s';
+  }
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+  var date = getDate(number);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+  for (var i = 0; i < returnArr.length; i++) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+  return format;
+}
+
+function getDateString(dateString) {
+  if (dateString == undefined) {
+    return '';
+  }
+  return dateString.split(' ')[0];
+}
+
+function getTimeString() {
+  if (dateString == undefined) {
+    return '';
+  }
+  return dateString.split(' ')[1];
+}
+
+/**
+ * 对于2018-09-07 09:00:00 这样的字符串，取出年份，需传入连接符号“-”
+ */
+function getYearString(dateString, wordKey) {
+  if (dateString == undefined) {
+    return '';
+  }
+  var date = dateString.split(' ')[0];
+  var result = date.split(wordKey)[0];
+  return result;
+}
+
+/**
+ * 对于2018-09-07 09:00:00 这样的字符串，取出月份和日期，需传入连接符号“-”
+ */
+function getMonthAndDayString(dateString, wordKey) {
+  if (dateString == undefined) {
+    return '';
+  }
+  var index = dateString.indexOf(wordKey);
+  var date = dateString.split(' ')[0];
+  return date.substring(index + 1, date.length);
+}
+
+function switchDateStamp(number) {
+  if (number == undefined || number == '') {
+    return '';
+  }
+  return getDate(number).toLocaleDateString().split('/').join('-');
+}
+
+function switchTimeStamp(number) {
+  if (number == undefined || number == '') {
+    return '';
+  }
+  if (number.indexOf(':') >= 0) {
+    // 获取最后一个，的位置并截取
+    var index = number.lastIndexOf(':');
+    var newTime = number.substring(0, index);
+    return newTime;
+  } else {
+    var timeString = getDate(number).toLocaleDateString().split('/').join('-');
+    var time = getDate(number).toTimeString().split(':');
+    timeString += ' ' + time[0];
+    timeString += ':' + time[1];
+    return timeString;
+  }
+}
+
+function ObjectToJSONString(obj) {
+  return JSON.stringify(obj);
+}

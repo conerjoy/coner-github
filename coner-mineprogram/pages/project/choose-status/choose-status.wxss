@@ -1,0 +1,21 @@
+.base-page {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+}
+
+.base-page .title-view {
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10%;
+}
+
+.base-page button {
+  width: 80%;
+  background-color: #d4237a;
+  color: wheat;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
